@@ -1,8 +1,12 @@
 package Utilty;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeDriverService;
+import org.openqa.selenium.edge.EdgeOptions;
 
 import java.time.Duration;
 import java.util.logging.Level;
@@ -15,8 +19,12 @@ public class BaseDrv {
      static {
         Logger logger = Logger.getLogger("");
         logger.setLevel(Level.SEVERE);  // make the program show error only
-        System.setProperty(EdgeDriverService.EDGE_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-        driverx = new EdgeDriver();
+         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        driverx = new ChromeDriver(options);
         Duration w=Duration.ofSeconds(20);
         driverx.manage().timeouts().pageLoadTimeout(w);
         driverx.manage().timeouts().implicitlyWait(w); //gives time for search the wanted elements

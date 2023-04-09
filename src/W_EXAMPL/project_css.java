@@ -12,12 +12,12 @@ public class project_css extends BaseDrv {
 
     driverx.get("https://formsmarts.com/form/yu?mode=h5");
 
-        waitTime(2);
+        waitTime(1);
 
     WebElement w1=driverx.findElement(By.cssSelector("[value=Business]"));
     w1.click();
 
-    waitTime(2);
+    waitTime(1);
 
     WebElement w2=driverx.findElement(By.cssSelector("[id$='_4588']"));
     //$ : ends with specified elements
@@ -28,12 +28,12 @@ public class project_css extends BaseDrv {
     WebElement w3=driverx.findElement(By.cssSelector("option[value='Online Advertising']"));
     w3.click();
 
-    waitTime(2);
+    waitTime(1);
 
     WebElement w4=driverx.findElement(By.cssSelector("input[value='Every Day']"));
     w4.click();
 
-    waitTime(2);
+    waitTime(1);
 
     WebElement w5=driverx.findElement(By.cssSelector("input[value='Good']"));
     w5.click();
